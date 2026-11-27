@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام إدارة النتائج - لجنة الرأفة</title>
+  <!-- ربط مكتبة Bootstrap RTL -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <!-- ربط ملف التنسيق الخاص -->
+   <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h4 class="mb-0">نظام إدارة النتائج ولجنة الرأفة</h4>
+          </div>
+          <div class="card-body p-4">
+
+            <!-- صندوق عرض رسائل الخطأ (فارغ في البداية) -->
+            <div id="errorBox" class="alert alert-danger d-none" role="alert"></div>
+
+            <!-- حقول الإدخال -->
+            <div class="mb-3">
+              <label for="studentName" class="form-label fw-bold">اسم الطالب:</label>
+              <input type="text" id="studentName" class="form-control" placeholder="أدخل اسم الطالب ثلاثياً">
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="subject1" class="form-label fw-bold">درجة المادة الأولى (0 - 100):</label>
+                <input type="number" id="subject1" class="form-control" placeholder="0 - 100">
+              </div>
+              <div class="col-md-4">
+                <label for="subject2" class="form-label fw-bold">درجة المادة الثانية (0 - 100):</label>
+                <input type="number" id="subject2" class="form-control" placeholder="0 - 100">
+              </div>
+              <div class="col-md-4">
+                <label for="subject3" class="form-label fw-bold">درجة المادة الثالثة (0 - 100):</label>
+                <input type="number" id="subject3" class="form-control" placeholder="0 - 100">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="attendance" class="form-label fw-bold">نسبة الحضور (%):</label>
+              <input type="number" id="attendance" class="form-control" placeholder="0 - 100">
+            </div>
+
+            <!-- أزرار التحكم -->
+            <div class="d-flex gap-2 mb-4">
+              <button id="addStudentBtn" class="btn btn-success flex-grow-1 fw-bold">إضافة طالب</button>
+              <button id="mercyBtn" class="btn btn-warning flex-grow-1 fw-bold">تفعيل لجنة الرأفة</button>
+            </div>
+
+            <hr>
+
+            <!-- مناطق العرض -->
+            <div class="mb-4">
+              <h5 class="text-secondary fw-bold mb-3">قائمة الطلاب المسجلين:</h5>
+              <div id="studentsListDisplay" class="list-group">
+                <!-- سيتم عرض الطلاب هنا -->
+              </div>
+            </div>
+
+            <div>
+              <h5 class="text-secondary fw-bold mb-3">التقرير النهائي للجنة الرأفة:</h5>
+              <div id="reportBox" class="p-3 bg-white border rounded">
+                <p class="text-muted mb-0">اضغط على زر "تفعيل لجنة الرأفة" لعرض التقرير.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ربط ملف الجافاسكريبت -->
+  <script src="main.js"></script>
+</body>
+</html>
